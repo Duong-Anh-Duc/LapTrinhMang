@@ -14,7 +14,7 @@ public class Client {
             output.write(request);
             output.newLine();
             output.flush();
-            String response = input.readLine().toLowerCase();
+            String response = input.readLine();
             System.out.println(response);
             String help = "ueoai";
             String result = "";

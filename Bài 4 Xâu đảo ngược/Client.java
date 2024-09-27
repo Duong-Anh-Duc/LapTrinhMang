@@ -1,14 +1,12 @@
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-
 public class Client {
     public static void main(String[] args) {
         try(Socket socket = new Socket("172.188.19.218", 1605)) {
-            String request = "B21DCCN467;qnAVde6";
+            String request = "B21DCCN407;0qQ4WZx";
             DataInputStream input = new DataInputStream(socket.getInputStream());
             DataOutputStream output = new DataOutputStream(socket.getOutputStream());
             output.writeUTF(request);

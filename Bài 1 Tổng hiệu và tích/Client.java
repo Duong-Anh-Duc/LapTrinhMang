@@ -10,19 +10,16 @@ public class Client {
             DataInputStream input = new DataInputStream(socket.getInputStream()); 
             String request = "B21DCCN239;M8rAT4P";  
             output.writeUTF(request);  
-            System.out.println("Đã gửi mã sinh viên và mã bài tập tới server.");
+            output.flush();
             int a = input.readInt();  
-            int b = input.readInt(); 
-            System.out.println("Nhận 2 số từ server là: a = " + a + ", b = " + b);
-            int sum = a + b;  
-            int product = a * b;  
-            output.writeInt(sum);  
-            output.writeInt(product);  
-            System.out.println("Gửi tổng và tích trở lại server: sum = " + sum + ", product = " + product);
+            int b = input.readInt();    
+            output.writeInt(a + b);
+            output.writeInt(a - b);
+            output.writeInt(a * b);  
+            output.flush();
             input.close();
             output.close();
             socket.close();
-            System.out.println("Đã đóng kết nối đến server.");
         } catch (IOException e) {
             System.err.println("Lỗi kết nối hoặc I/O: " + e.getMessage());
         }

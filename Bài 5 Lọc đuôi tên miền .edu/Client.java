@@ -8,13 +8,14 @@ import java.util.ArrayList;
 public class Client {
     public static void main(String[] args) {
         try(Socket socket = new Socket("172.188.19.218", 1606)){
-            String request = "B21DCCN467;mHBlrUe";
+            String request = "B21DCCN407;Zsf1Jvh";
             BufferedWriter output = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             output.write(request);
             output.newLine();
             output.flush();
             String tmp[] = input.readLine().split(",\\s*");
+
             for(int i = 0 ; i < tmp.length;i++){
                System.out.println(tmp[i]);
             }
