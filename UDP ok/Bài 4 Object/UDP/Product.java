@@ -1,6 +1,6 @@
 package UDP;
 import java.io.Serializable;
- public class Product implements Serializable {
+public class Product implements Serializable {
     private static final long serialVersionUID = 20161107L;
     private String id;
     private String code;
