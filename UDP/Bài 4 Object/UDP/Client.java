@@ -1,5 +1,9 @@
+<<<<<<< HEAD:UDP ok/Bài 4 Object/Main/Client.java
 package javaapplication6;
 import UDP.Product;
+=======
+package UDP;
+>>>>>>> c20ae60 (commit):UDP/Bài 4 Object/UDP/Client.java
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -8,7 +12,12 @@ import java.io.ObjectOutputStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+<<<<<<< HEAD:UDP ok/Bài 4 Object/Main/Client.java
 import java.net.SocketException;
+=======
+import UDP.Product;
+
+>>>>>>> c20ae60 (commit):UDP/Bài 4 Object/UDP/Client.java
 public class Client {
     public static void main(String[] args) throws SocketException, IOException, ClassNotFoundException {
         // gửi dữ msv và mã 

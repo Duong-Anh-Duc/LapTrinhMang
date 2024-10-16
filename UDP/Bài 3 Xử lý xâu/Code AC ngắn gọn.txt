@@ -1,0 +1,29 @@
+package javaapplication6;
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+public class Client {
+    public static void main(String[] args) throws ClassNotFoundException {
+        try{
+            DatagramSocket socket = new DatagramSocket();
+            String send1 = ";B21DCCN407;F540ZCIR";
+            DatagramPacket dp1 = new DatagramPacket(send1.getBytes(), send1.length(), InetAddress.getByName("203.162.10.109"), 2208);
+            socket.send(dp1);
+            byte []read = new byte[1024];
+            DatagramPacket res = new DatagramPacket(read, read.length);
+            String ans = new String(res.getData(), 0, res.getLength());
+            String arr[] = ans.split("[\\s;]+");
+            String result = arr[0] + ";";
+            for(int i = 1 ; i < arr.length;i++){
+                result += arr[i].toUpperCase().substring(0, 1) + arr[i].toLowerCase().substring(1) + ((i != arr.length - 1) ? " " : ""); 
+            }
+            System.out.println(result);
+            DatagramPacket dp2 = new DatagramPacket(result.getBytes(), result.getBytes().length, InetAddress.getByName("203.162.10.109"), 2208);
+            socket.send(dp2);
+            socket.close();
+        }
+        catch(IOException e){
+    }
+    }
+}
